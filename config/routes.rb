@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+
+  resources :chores, except: [:new, :edit]
+  scope path: '/api' do
+    resources :chores
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
