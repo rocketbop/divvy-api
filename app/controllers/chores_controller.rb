@@ -5,7 +5,6 @@ class ChoresController < ApplicationController
   # GET /chores.json
   def index
     @chores = Chore.all
-
     render json: @chores
   end
 
@@ -19,7 +18,7 @@ class ChoresController < ApplicationController
   # POST /chores.json
   def create
     @chore = Chore.new(chore_params)
-    logger(chore_params)
+
     if @chore.save
       render json: @chore, status: :created, location: @chore
     else
