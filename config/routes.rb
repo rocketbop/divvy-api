@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
 
-  resources :chores, except: [:new, :edit]
   scope path: '/api' do
     resources :chores
+    # Below would prevent get requests to show all the chores 
+    #resources :chores, except: :index
+
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

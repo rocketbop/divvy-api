@@ -12,6 +12,11 @@ gem 'sqlite3'
 
 
 
+# Add cors to handle cross origin resources requests from client app
+gem 'rack-cors', :require => 'rack/cors'
+
+
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
