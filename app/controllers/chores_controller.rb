@@ -19,7 +19,7 @@ class ChoresController < ApplicationController
   # POST /chores.json
   def create
     @chore = Chore.new(chore_params)
-
+    logger(chore_params)
     if @chore.save
       render json: @chore, status: :created, location: @chore
     else
@@ -54,6 +54,6 @@ class ChoresController < ApplicationController
     end
 
     def chore_params
-      params[:chore]
+      params.require(:chore).permit(:description)
     end
 end
